@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Heart, Users, HandHeart, Shield, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function LandingPage() {
   return (
@@ -9,10 +10,10 @@ export default function LandingPage() {
       {/* Navigation */}
       <nav className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <Heart className="h-8 w-8 text-primary" />
             <span className="text-2xl font-bold text-foreground">Kerekere</span>
-          </div>
+          </Link>
           <div className="flex items-center gap-4">
             <Button variant="ghost" className="text-foreground">About</Button>
             <Button variant="ghost" className="text-foreground">How It Works</Button>
@@ -42,12 +43,16 @@ export default function LandingPage() {
               and offering support to those who do. Together, we strengthen our community.
             </p>
             <div className="flex gap-4 justify-center">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                Ask for Help <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-border text-foreground">
-                Offer Support
-              </Button>
+              <Link to="/requests">
+                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                  Ask for Help <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link to="/requests">
+                <Button size="lg" variant="outline" className="border-border text-foreground">
+                  Offer Support
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -129,9 +134,11 @@ export default function LandingPage() {
                   <CardDescription className="text-muted-foreground">{category.desc}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button variant="ghost" className="w-full text-foreground">
-                    Browse Requests <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
+                  <Link to="/requests">
+                    <Button variant="ghost" className="w-full text-foreground">
+                      Browse Requests <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}

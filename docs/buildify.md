@@ -18,7 +18,7 @@
 ### Tasks
 - [x] Setup design system with Fijian-inspired color palette
 - [x] Create landing page with hero section and platform overview
-- [ ] Build request listing page with filtering
+- [x] Build request listing page with filtering
 - [ ] Implement request creation form
 - [ ] Setup Supabase database schema for requests and users
 - [ ] Add authentication system
